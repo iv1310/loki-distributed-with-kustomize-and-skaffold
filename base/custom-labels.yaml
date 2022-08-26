@@ -1,0 +1,190 @@
+### ruler
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-loki-distributed-ruler
+  labels:
+    service_name: ruler
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: release-name-loki-distributed-ruler
+  labels:
+    service_name: ruler
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-loki-distributed-ruler
+  labels:
+    service_name: ruler
+
+### table-manager
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-loki-distributed-table-manager
+  labels:
+    service_name: table-manager
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-loki-distributed-table-manager
+  labels:
+    service_name: table-manager
+
+### query-frontend
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: release-name-loki-distributed-query-frontend
+  labels:
+    service_name: query-frontend
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-loki-distributed-query-frontend
+  labels:
+    service_name: query-frontend
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-loki-distributed-query-frontend
+  labels:
+    service_name: query-frontend
+
+### querier
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: release-name-loki-distributed-querier
+  labels:
+    service_name: querier
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: release-name-loki-distributed-querier
+  labels:
+    service_name: querier
+
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: release-name-loki-distributed-querier
+  labels:
+    service_name: querier
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-loki-distributed-querier-headless
+  labels:
+    service_name: querier
+
+### distributor
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: release-name-loki-distributed-distributor
+  labels:
+    service_name: distributor
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-loki-distributed-distributor
+  labels:
+    service_name: distributor
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-loki-distributed-distributor
+  labels:
+    service_name: distributor
+
+### ingester
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: release-name-loki-distributed-ingester
+  labels:
+    service_name: ingester
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: release-name-loki-distributed-ingester
+  labels:
+    service_name: ingester
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-loki-distributed-ingester
+  labels:
+    service_name: ingester
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-loki-distributed-ingester-headless
+  labels:
+    service_name: ingester
+
+### gateway
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: release-name-loki-distributed-gateway
+  labels:
+    service_name: gateway
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-loki-distributed-gateway
+  labels:
+    service_name: gateway
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-loki-distributed-gateway
+  labels:
+    service_name: gateway
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: release-name-loki-distributed-gateway
+  labels:
+    service_name: gateway

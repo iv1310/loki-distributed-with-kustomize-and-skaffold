@@ -1,0 +1,6 @@
+resources:
+- lokidistributed-base.yaml
+- priorityclass.yaml
+patches:
+- gateway-svc.yaml
+- custom-labels.yaml

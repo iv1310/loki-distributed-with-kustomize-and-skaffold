@@ -1,0 +1,13 @@
+resources:
+- ../../base
+namespace: development
+namePrefix: dev-
+labels:
+  - pairs:
+      service_group: loki
+      service_type: logging
+      environment: development
+patches:
+- ingester-ss.yaml
+- gateway-deploy.yaml
+- distributor-deploy.yaml

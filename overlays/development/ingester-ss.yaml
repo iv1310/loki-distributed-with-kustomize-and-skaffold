@@ -1,0 +1,6 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: release-name-loki-distributed-ingester
+spec:
+  priorityClassName: dev-high-priority

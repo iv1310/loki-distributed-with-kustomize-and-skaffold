@@ -1,0 +1,13 @@
+resources:
+- ../../base
+namespace: production
+namePrefix: prod-
+labels:
+  - pairs:
+      service_group: loki
+      service_type: logging
+      environment: production
+patches:
+- ingester-ss.yaml
+- distributor-deploy.yaml
+- gateway-deploy.yaml

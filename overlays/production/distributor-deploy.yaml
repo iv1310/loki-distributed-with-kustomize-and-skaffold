@@ -1,0 +1,6 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-loki-distributed-distributor
+spec:
+  priorityClassName: prod-high-priority
