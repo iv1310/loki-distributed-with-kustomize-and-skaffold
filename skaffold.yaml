@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: loki-distributed-skaffold
+profiles:
+- name: production
+  deploy:
+    kustomize:
+      paths:
+      - overlays/production
+- name: development
+  deploy:
+    kustomize:
+      paths:
+      - overlays/development
