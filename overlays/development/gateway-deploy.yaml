@@ -3,4 +3,6 @@ kind: Deployment
 metadata:
   name: release-name-loki-distributed-gateway
 spec:
-  priorityClassName: dev-high-priority
+  template:
+    spec:
+      priorityClassName: dev-high-priority
